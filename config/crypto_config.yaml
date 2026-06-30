@@ -1,0 +1,41 @@
+# CryptoAgents Pro — 加密货币专用配置
+
+exchange:
+  name: "binance"
+  testnet: true
+  symbols:
+    - "BTC/USDT"
+    - "ETH/USDT"
+    - "SOL/USDT"
+  timeframes: ["15m", "1h", "1d"]
+  kline_limit: 10000
+
+ai:
+  provider: "deepseek"
+  model: "deepseek-v4-pro"
+  temperature: 0.1
+  max_tokens: 2000
+
+strategies:
+  active_mode: "auto"
+  switch_confirmation: true
+  confirm_timeout: 300
+
+risk:
+  initial_capital: 10000
+  max_leverage: 10
+  max_loss_per_trade_pct: 3
+  max_daily_loss_pct: 15
+  min_stop_distance_pct: 0.3
+  daily_reset_time: "00:00"
+
+tasks:
+  schedule_5min: true
+  schedule_15min: true
+  schedule_1hour: true
+  schedule_daily: true
+
+backtest:
+  default_speed: 1
+  speed_options: [1, 2, 5, 10, 20, 100]
+  max_lookback_days: 365
